@@ -153,7 +153,7 @@ def build_application(token: str) -> Application:
 def main() -> None:
     token = os.getenv("SECRET", DEFAULT_TOKEN)
     if token == DEFAULT_TOKEN:
-        logger.warning("Используется временный токен по умолчанию. Установите TELEGRAM_BOT_TOKEN для боевого режима.")
+        logger.warning("Установите TELEGRAM_BOT_TOKEN для боевого режима. Не расстраивайте Артёма Фукса.")
     application = build_application(token)
     logger.info("Запуск бота на Facenet-эмбеддингах...")
     application.run_polling(close_loop=False)
