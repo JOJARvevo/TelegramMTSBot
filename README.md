@@ -1,6 +1,6 @@
 # Telegram Gender Bot
 
-Telegram bot that classifies the gender of the person on a photo with a pre-trained EfficientNet-B0 model.
+Telegram bot that classifies the gender of the person on a photo with a pre-trained FaceNet + MLP model.
 
 ## Environment setup
 
@@ -17,7 +17,7 @@ export TELEGRAM_BOT_TOKEN=<your_token>
 python bot.py
 ```
 
-`bot.py` uses the EfficientNet-B0 classifier from `efficientnet_gender.pth`.
+`bot.py` uses the MLP classifier from `best.pth`.
 
 To run the version that extracts Facenet embeddings (`best.pth`), execute:
 
@@ -25,5 +25,3 @@ To run the version that extracts Facenet embeddings (`best.pth`), execute:
 export TELEGRAM_BOT_TOKEN=<your_token>
 python bot2.py
 ```
-
-On the first launch `bot2.py` downloads the pretrained Facenet weights to the local torch cache (SSL trust is configured through `certifi`). After the bot starts, send it a face photo as a regular photo or as an image document — it will reply with either “Man” or “Woman” plus the confidence.
